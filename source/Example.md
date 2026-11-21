@@ -1,47 +1,127 @@
-# Aion Codex — example chronicle
+# Timeline of Events
 
 ```aion-timeline
-# In the Beginning
-## Billions of Years Ago…
+<!-- aion: chronicle/age-1 -->
+# Creation
+
+Describe the Age...
+
+## In the Beginning...
 ### Circa
-- The first light awakens.
+- Something interesting happened...
+```
 
-## Before Recorded History
+```aion-timeline
+<!-- aion: chronicle/age-2 -->
+# Stone Age
+
+Describe the Age...
+
+## Past
 ### Circa
-- The oldest stories speak of a sleeping sea.
+- Something interesting happened...
+```
 
----
+```aion-timeline
+<!-- aion: chronicle/age-3 -->
+# Metal Ages
 
-# Age of Titans
-<!-- colour: #b56b42 -->
+Describe the Age...
 
-An age of **primordial conflict**, when the first mountains rose
-and the titans shaped the world.
-
-## 700,000 BCE
+## Past
 ### Circa
-- The titans walk the world.
-- The first mountains rise.
+- Something interesting happened...
+```
 
-## Year of the Falling Star
-### 11 February
-- A star falls beyond the northern mountains.
-- The first expedition departs.
-### Spring
-- The expedition discovers **an ancient gate**.
+```aion-timeline
+<!-- aion: chronicle/age-4 -->
+# Middle Ages
 
----
+Describe the Age...
 
-# Age of Kingdoms
-<!-- colour: #537cb8 -->
-## 1 CE
-### 1 March
-- The kingdoms sign their first treaty.
+## Past
+### Circa
+- Something interesting happened...
+```
 
----
+```aion-timeline
+<!-- aion: chronicle/age-5 -->
+# Age of Reason
 
-# What Is Yet to Come
+Describe the Age...
+
+## Past
+### Circa
+- Something interesting happened...
+```
+
+```aion-timeline
+<!-- aion: chronicle/age-6 -->
+# Industrial Age
+
+Describe the Age...
+
+## Past
+### Circa
+- Something interesting happened...
+```
+
+```aion-timeline
+<!-- aion: chronicle/age-7 -->
+# Information Age
+<!-- colour: #008000 -->
+
+Describe the Age...
+
+## Present
+### Circa
+- Something interesting happened...
+```
+
+```aion-timeline
+<!-- aion: chronicle/age-8 -->
+# Fusion Age
+<!-- colour: #000080 -->
+
+Describe the Age...
+
 ## Future
-### Prophecy
-- The sleeping gate will open.
+### Circa
+- Something interesting happened...
+```
+
+```aion-timeline
+<!-- aion: chronicle/age-9 -->
+# Gravity Age
+<!-- colour: #000080 -->
+
+Describe the Age...
+
+## Future
+### Circa
+- Something interesting happened...
+```
+
+```aion-timeline
+<!-- aion: chronicle/age-10 -->
+# Energy Age
+<!-- colour: #000080 -->
+
+Describe the Age...
+
+## Future
+### Circa
+- Something interesting happened...
+```
+
+```aion-timeline
+<!-- aion: chronicle/age-11 -->
+# Ragnarök
+<!-- colour: #000000 -->
+
+Describe the Age...
+
+## Prophecy
+### Circa
+- Of things to come...
 ```

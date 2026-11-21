@@ -2,7 +2,7 @@ const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
 const {prepareTemplate,blocks,linkInfo,linkedChronicle,parse}=require('./model');
 test('bundled template retains all user content, colours and notes while replacing linking identifiers',()=>{
- const source=fs.readFileSync(path.join(__dirname,'..','Template.md'),'utf8');
+ const source=fs.readFileSync(path.join(__dirname,'Template.md'),'utf8');
  const output=prepareTemplate(source,'','fresh');
  assert.equal(blocks(output).length,11);assert.deepEqual(linkedChronicle(output,'fresh').ages,linkedChronicle(source,'chronicle').ages);
  assert.equal(output.replace(/aion: fresh\//g,'aion: chronicle/'),source);

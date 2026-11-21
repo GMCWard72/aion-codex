@@ -1,3 +1,4 @@
+const BUNDLED_TEMPLATE = require('./template.json');
 const { Plugin, Component, MarkdownRenderChild, MarkdownRenderer, Modal, Setting, PluginSettingTab, Notice, TFile, setIcon } = require('obsidian');
 const { parse, serialize, ordered, locateBlock, saveEvent, deleteAge, deleteEvent, linkInfo, linkedChronicle, linkedLayout, matchingEventCount, writeLinkedChronicle, splitAddedAge, prepareTemplate, setStartingAge, orderStartingAge } = require('./model');
 const { ViewportRenderer, MarkdownPool } = require('./rendering');
@@ -790,7 +791,11 @@ module.exports=class AionCodex extends Plugin {
       const leaf=this.app.workspace?.activeLeaf;
       try{
         const directory=this.manifest?.dir||((this.app.vault.configDir||'.obsidian')+'/plugins/aion-codex');
-        const template=await this.app.vault.adapter.read(directory+'/Template.md');
+        let template = BUNDLED_TEMPLATE;
+        const templatePath = directory + '/Template.md';
+        if (await this.app.vault.adapter.exists(templatePath)) {
+          template = await this.app.vault.adapter.read(templatePath);
+        }
         if(this.stopped)return;
         if((editor.getValue&&editor.getValue()!==before)||(selection&&JSON.stringify([editor.getCursor('from'),editor.getCursor('to')])!==selection)||this.app.workspace?.activeLeaf!==leaf)
           throw new Error('The note or selection changed. Run Insert example Chronicle again.');

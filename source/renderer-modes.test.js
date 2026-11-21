@@ -3,13 +3,13 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {linkAndSplit,blocks,linkedChronicle,parse}=require('./model');
 async function setup(note='# Note'){
- let template=fs.readFileSync(path.join(__dirname,'..','Template.md'),'utf8');
+ let template=fs.readFileSync(path.join(__dirname,'Template.md'),'utf8');
  let handler,mode='preview',source=true;const children=[],notices=[],commands=[],cleanup=[];let writes=0;
  class TFile{constructor(){this.extension='md';this.path='note.md';}}
  const file=new TFile();
  const view={file,getMode:()=>mode,getState:()=>({source}),getViewData:()=>note,containerEl:{contains:()=>true}};
  const workspace={activeLeaf:{view},getLeavesOfType:()=>[{view}]};
- const app={workspace,vault:{adapter:{read:async filePath=>{assert.equal(filePath,'.obsidian/plugins/aion-codex/Template.md');return template;}},getAbstractFileByPath:()=>file,cachedRead:async()=>note,read:async()=>note,process:async(f,edit)=>{assert.equal(f,file);note=edit(note);writes++;}}};
+ const app={workspace,vault:{adapter:{exists:async()=>true,read:async filePath=>{assert.equal(filePath,'.obsidian/plugins/aion-codex/Template.md');return template;}},getAbstractFileByPath:()=>file,cachedRead:async()=>note,read:async()=>note,process:async(f,edit)=>{assert.equal(f,file);note=edit(note);writes++;}}};
  class Plugin{
   constructor(){this.app=app;}
   async loadData(){return null;}addSettingTab(){}addCommand(command){commands.push(command);}register(fn){cleanup.push(fn);}
@@ -137,7 +137,7 @@ test('Insert example cannot replace text typed while Template.md is being read',
  const f=await setup();let note='Original',resolve;
  f.plugin.app.vault.adapter.read=()=>new Promise(done=>{resolve=done;});
  const pending=f.commands.find(c=>c.id==='insert-timeline').editorCallback({getValue:()=>note,replaceSelection:text=>{note=text;}});
- note='User edited';resolve('```aion-timeline\n# Age\n```\n');await pending;
+ await new Promise(done=>setImmediate(done));note='User edited';resolve('```aion-timeline\n# Age\n```\n');await pending;
  assert.equal(note,'User edited');assert.match(f.notices.at(-1),/changed/);
 });
 
@@ -146,7 +146,7 @@ test('Insert example leaves a changed selection and an invalid template untouche
  const editor={getValue:()=>'',getCursor:()=>({...selection}),replaceSelection:()=>{insertions++;}};
  f.plugin.app.vault.adapter.read=()=>new Promise(done=>{resolve=done;});
  const pending=f.commands.find(c=>c.id==='insert-timeline').editorCallback(editor);
- selection={line:0,ch:2};resolve('```aion-timeline\n# Age\n```\n');await pending;
+ await new Promise(done=>setImmediate(done));selection={line:0,ch:2};resolve('```aion-timeline\n# Age\n```\n');await pending;
  assert.equal(insertions,0);assert.match(f.notices.at(-1),/selection changed/);
  f.plugin.app.vault.adapter.read=async()=> 'Not a timeline';
  await f.commands.find(c=>c.id==='insert-timeline').editorCallback(editor);
@@ -171,3 +171,12 @@ test('a Starting Age in a standalone timeline is saved with a linked starting ma
  assert.equal(view.linked.part,'starting');assert.equal(linkedChronicle(f.note,'chronicle').ages[0].title,'Two');
  assert.match(blocks(f.note)[0].source,/aion: chronicle\/starting/);
 });
+
+test('fresh installation inserts the bundled template without an external file',async()=>{
+ const f=await setup();let note='';
+ f.plugin.app.vault.adapter.exists=async()=>false;
+ f.plugin.app.vault.adapter.read=async()=>{throw Error('Unexpected external template read');};
+ await f.commands.find(c=>c.id==='insert-timeline').editorCallback({getValue:()=>note,replaceSelection:text=>{note=text;}});
+ assert.ok(blocks(note).length>0);assert.equal(f.notices.length,0);
+});
+
