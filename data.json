@@ -1,0 +1,29 @@
+{
+  "yearWidth": 150,
+  "gap": 10,
+  "accent": "#800000",
+  "panels": true,
+  "ageTextSize": 140,
+  "yearTextSize": 100,
+  "dateTextSize": 120,
+  "eventTextSize": 80,
+  "eras": [
+    "BCE",
+    "CE"
+  ],
+  "months": [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ],
+  "imageSize": 96
+}
