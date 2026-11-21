@@ -52,7 +52,6 @@ For example, two linked Ages:
 
 ````markdown
 ```aion-timeline
-```aion-timeline
 <!-- aion: chronicle/starting -->
 # Age of Stars
 <!-- colour: #af0000 -->
@@ -95,7 +94,6 @@ When Dragons ruled the skys.
 ## Future
 ### Prophecy
 - The lost city will rise again.
-```
 ```
 ````
 
