@@ -5,16 +5,16 @@
 .theme-dark .aion-codex,.theme-dark .aion-age,.theme-dark .aion-drop-indicator{--aion-accent:color-mix(in srgb,var(--aion-accent-base,#af0000) 60%,var(--text-normal))}
 }
 
-.aion-toolbar[hidden],.aion-status[hidden]{display:none!important}
+.aion-toolbar.aion-toolbar[hidden],.aion-status.aion-status[hidden]{display:none}
 .aion-settings-tabs{display:flex;gap:8px;margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid var(--background-modifier-border)}
-.aion-settings-tab{margin:0!important}
+.aion-settings-tab.aion-settings-tab{margin:0}
 .aion-settings-tab[aria-selected=true]{background-color:var(--interactive-accent);color:var(--text-on-accent)}
-.aion-settings-panel[hidden]{display:none!important}
+.aion-settings-panel.aion-settings-panel[hidden]{display:none}
 .aion-era-row{display:grid;grid-template-columns:minmax(0,260px) auto;align-items:center;gap:12px;max-width:440px;margin-bottom:12px}
 .aion-era-row input{width:100%;min-width:0}
 .aion-calendar-add,.aion-month-row{display:flex;align-items:center;gap:8px;max-width:500px;margin-bottom:8px}
 .aion-calendar-add input,.aion-month-row input{flex:1;min-width:0}
-.aion-calendar-add>.aion-icon,.aion-month-row>.aion-icon{box-sizing:border-box;margin:0!important;min-height:28px;max-height:28px}
+.aion-calendar-add.aion-calendar-add>.aion-icon.aion-icon,.aion-month-row.aion-month-row>.aion-icon.aion-icon{box-sizing:border-box;margin:0;min-height:28px;max-height:28px}
 .aion-month-row{position:relative}
 .aion-month-grip{display:inline-flex;align-items:center;cursor:grab;color:var(--text-muted)}
 .aion-month-grip svg{width:16px;height:16px}
@@ -27,11 +27,11 @@
 .aion-search{position:relative;display:flex;flex:1;min-width:0}
 .aion-search input{width:100%;padding-right:32px}
 .aion-search input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
-.aion-search .aion-search-clear{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:22px;height:22px;padding:2px!important;border:0;box-shadow:none;background:transparent;color:var(--text-muted)}
-.aion-search-clear[hidden]{display:none!important}
+.aion-search.aion-search .aion-search-clear.aion-search-clear{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:22px;height:22px;padding:2px;border:0;box-shadow:none;background:transparent;color:var(--text-muted)}
+.aion-search-clear.aion-search-clear[hidden]{display:none}
 .aion-status{font-size:var(--font-smallest);color:var(--text-muted);padding:8px 0 18px}
 .aion-age{margin:0 0 30px}.aion-age-heading{display:flex;gap:10px;align-items:center;margin-bottom:18px}
-.aion-age-heading h2{margin:0!important;flex:1;font-size:var(--aion-age-size);color:var(--text-accent);line-height:1.3}
+.aion-age-heading.aion-age-heading h2{margin:0;flex:1;font-size:var(--aion-age-size);color:var(--text-accent);line-height:1.3}
 .aion-age-description{font-size:1em;line-height:var(--line-height-normal,1.5);margin:0 0 20px;overflow-wrap:anywhere}
 .aion-age-description>:first-child{margin-top:0}.aion-age-description>:last-child{margin-bottom:0}
 .aion-age-description .aion-markdown-content>:first-child{margin-top:0}.aion-age-description .aion-markdown-content>:last-child{margin-bottom:0}
@@ -46,32 +46,32 @@
 .aion-panel{position:relative;background:var(--aion-grey);border-left:3px solid var(--aion-accent);padding:16px 20px;min-width:0;border-radius:6px 5px 5px 6px}
 .aion-no-panels .aion-panel{position:relative;background:transparent}
 .aion-date-group{margin-bottom:14px}.aion-date-group:last-child{margin-bottom:0}
-.aion-codex .aion-date-group h3{font-size:var(--aion-date-size);font-weight:700;line-height:1.4;margin:0 0 4px!important;color:var(--text-normal)}
-.aion-codex .aion-date-group>.aion-events{font-size:var(--aion-event-size);margin:0!important;padding:0!important;list-style:none!important}
-.aion-codex .aion-events>li{font-size:inherit;position:relative;padding:0 96px 0 1.1em!important;margin:3px 0!important;list-style:none!important}
+.aion-codex.aion-codex .aion-date-group.aion-date-group h3{font-size:var(--aion-date-size);font-weight:700;line-height:1.4;margin:0 0 4px;color:var(--text-normal)}
+.aion-codex.aion-codex .aion-date-group.aion-date-group>.aion-events.aion-events{font-size:var(--aion-event-size);margin:0;padding:0;list-style:none}
+.aion-codex.aion-codex .aion-events.aion-events>li{font-size:inherit;position:relative;padding:0 96px 0 1.1em;margin:3px 0;list-style:none}
 .aion-codex .aion-events>li::before{content:'\2022';position:absolute;left:0;top:0;line-height:1.5;color:var(--text-muted)}
 .aion-event-text p{margin:0}.aion-event-text{line-height:1.5;overflow-wrap:anywhere}
-.aion-event-text img,.aion-event-text .internal-embed,.aion-event-text video,.aion-event-text iframe,.aion-event-text audio{display:none!important}
+.aion-event-text.aion-event-text img,.aion-event-text.aion-event-text .internal-embed,.aion-event-text.aion-event-text video,.aion-event-text.aion-event-text iframe,.aion-event-text.aion-event-text audio{display:none}
 .aion-event-actions{position:absolute;right:0;top:0;display:flex;gap:3px;opacity:0}
-.aion-event-actions[hidden]{display:none!important}
+.aion-event-actions.aion-event-actions[hidden]{display:none}
 .aion-date-group li:hover>.aion-event-actions,.aion-date-group li:focus-within>.aion-event-actions{opacity:1}
-.aion-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:28px;height:28px;padding:4px!important}
-:is(.aion-toolbar,.aion-age-heading,.aion-event-actions,.aion-dialog-actions)>.aion-icon{box-sizing:border-box;align-self:center;min-height:28px;max-height:28px;margin:0!important;line-height:1}
+.aion-icon.aion-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:28px;height:28px;padding:4px}
+:is(.aion-toolbar.aion-toolbar,.aion-age-heading.aion-age-heading,.aion-event-actions.aion-event-actions,.aion-dialog-actions.aion-dialog-actions)>.aion-icon.aion-icon{box-sizing:border-box;align-self:center;min-height:28px;max-height:28px;margin:0;line-height:1}
 .aion-icon svg{display:block;flex-shrink:0;width:16px;height:16px}.aion-delete:hover{color:var(--text-error)}
-.aion-panel-sort{position:absolute;right:20px;top:16px;box-sizing:border-box;width:22px;height:22px;min-height:22px;max-height:22px;margin:0!important;padding:3px!important;line-height:1}
+.aion-panel-sort.aion-panel-sort{position:absolute;right:20px;top:16px;box-sizing:border-box;width:22px;height:22px;min-height:22px;max-height:22px;margin:0;padding:3px;line-height:1}
 .aion-panel-sort svg{width:14px;height:14px}
 .aion-dialog-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
 .aion-wide-editor.setting-item{display:flex;flex-direction:column;align-items:stretch;gap:10px}
 .aion-wide-editor .setting-item-info{width:100%;margin-right:0}
 .aion-wide-editor .setting-item-control{width:100%;justify-content:stretch}
-.aion-wide-editor textarea{display:block;width:100%!important;max-width:100%;min-width:0;box-sizing:border-box;resize:vertical;font-family:var(--font-text);line-height:1.5}
+.aion-wide-editor.aion-wide-editor textarea{display:block;width:100%;max-width:100%;min-width:0;box-sizing:border-box;resize:vertical;font-family:var(--font-text);line-height:1.5}
 .aion-empty{font-size:var(--font-smallest);color:var(--text-muted)}
 .aion-error{color:var(--text-error)}
 .aion-codex [draggable=true]{cursor:grab}.aion-codex [draggable=true]:active{cursor:grabbing}
 .aion-drop{outline:2px dashed var(--aion-accent);outline-offset:3px}
 .aion-drop-indicator{position:fixed;height:3px;background:var(--aion-accent,var(--interactive-accent));pointer-events:none;z-index:1000;transform:translateY(-1.5px);border-radius:2px}
-.aion-drop-indicator[hidden]{display:none!important}
+.aion-drop-indicator.aion-drop-indicator[hidden]{display:none}
 @media(hover:none){.aion-event-actions{opacity:1}}
 @media(max-width:600px){.aion-year{grid-template-columns:100px minmax(0,1fr);gap:18px}.aion-year:before{left:107.5px}.aion-year-label:after{right:-15px}.aion-panel{padding:12px}.aion-badge{display:none}.aion-toolbar{flex-wrap:wrap}.aion-toolbar input{width:100%}}
 
-.aion-panel:has(>.aion-panel-sort)>.aion-date-group:first-of-type h3{padding-right:32px}
+.aion-codex .aion-panel-sort ~ .aion-date-group:first-of-type h3{padding-right:32px}
