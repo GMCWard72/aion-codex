@@ -43,7 +43,7 @@
 .aion-year-label{text-align:right;padding:16px 0;position:relative;font-size:var(--aion-year-size);overflow-wrap:anywhere}
 .aion-year-label:after{content:'';position:absolute;right:-19px;top:21px;width:12px;height:12px;border-radius:50%;background:var(--aion-accent);box-shadow:0 0 0 4px var(--background-primary)}
 .aion-year-label strong{display:block}
-.aion-panel{position:relative;background:var(--aion-grey);border-left:3px solid var(--aion-accent);padding:16px 20px;min-width:0;border-radius:0 5px 5px 0}
+.aion-panel{position:relative;background:var(--aion-grey);border-left:3px solid var(--aion-accent);padding:16px 20px;min-width:0;border-radius:6px 5px 5px 6px}
 .aion-no-panels .aion-panel{position:relative;background:transparent}
 .aion-date-group{margin-bottom:14px}.aion-date-group:last-child{margin-bottom:0}
 .aion-codex .aion-date-group h3{font-size:var(--aion-date-size);font-weight:700;line-height:1.4;margin:0 0 4px!important;color:var(--text-normal)}
