@@ -8,7 +8,7 @@ Aion Codex organises a Chronicle into **Ages, Years, Dates and Events**. It was 
 
 Years appear on the left, with Dates and their Events grouped in panels on the right. Age headings and optional descriptions divide the Chronicle into chapters. You can work through dialogs and drag/drop, edit the Markdown directly, or combine both approaches.
 
-![[Aion Codex - Timeline.png]]
+![Aion Codex timeline](Aion%20Codex%20-%20Timeline.png)
 
 ## Features at a glance
 
