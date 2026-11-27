@@ -8,6 +8,8 @@ Aion Codex organises a Chronicle into **Ages, Years, Dates and Events**. It was 
 
 Years appear on the left, with Dates and their Events grouped in panels on the right. Age headings and optional descriptions divide the Chronicle into chapters. You can work through dialogs and drag/drop, edit the Markdown directly, or combine both approaches.
 
+![[Aion Codex - Timeline.png]]
+
 ## Features at a glance
 
 - **Flexible labels:** use numeric Years, named Years, custom Eras, approximate Dates, prophecies and undated Events.
@@ -29,9 +31,9 @@ Years appear on the left, with Dates and their Events grouped in panels on the r
 Aion Codex is currently installed manually; these instructions do not require an Obsidian Community Plugins listing.
 
 1. Create `.obsidian/plugins/aion-codex/` inside your vault.
-2. Copy **manifest.json**, **main.js**, **styles.css** and **Template.md** from the plugin folder into it.
+2. Copy **manifest.json**, **main.js** and **styles.css** from the plugin folder into it.
 3. Restart Obsidian and enable **Aion Codex** under **Settings → Community plugins**.
-4. In a note, run **Aion Codex: Insert example Chronicle** from the command palette. Alternatively, copy the bundled `Example.md` into your vault.
+4. In a note, run **Aion Codex: Insert example Chronicle** from the command palette. Alternatively, copy the `source/Example.md` into your vault.
 5. Open Reading View or Live Preview to see the Chronicle. Use Source Mode for direct Markdown editing.
 
 No dependency installation or build step is needed to use the bundled plugin. The minimum declared Obsidian version is **1.5.0**.
@@ -52,35 +54,19 @@ For example, two linked Ages:
 
 ````markdown
 ```aion-timeline
-<!-- aion: chronicle/starting -->
+<!-- aion: my-chronicle/age-1 -->
 # Age of Stars
 <!-- colour: #af0000 -->
 
 An overview of the Age, with **emphasis** and [[World history]].
 
-## 1,000,000 BCE
+## 1,000 BCE
+### Circa
+- The first settlements appear.
+
 ### 11 Rainwake
 - A traveller records the falling star.
 - The council gathers to discuss its meaning.
-```
-
-```aion-timeline
-<!-- aion: chronicle/age-2 -->
-# Age of Dragon
-<!-- colour: #000080 -->
-
-When Dragons ruled the skys.
-
-## 10,000 BCE
-### Circa
-- The Lord of All Dragon conquered the skies.
-- The first settlements appear.
-```
-
-```aion-timeline
-<!-- aion: chronicle/age-1 -->
-# Age of Man
-<!-- colour: #008000 -->
 
 ## Year of the Silver Crown
 ### Winter's End
@@ -88,7 +74,7 @@ When Dragons ruled the skys.
 ```
 
 ```aion-timeline
-<!-- aion: chronicle/age-3 -->
+<!-- aion: my-chronicle/age-2 -->
 # What Is Yet to Come
 
 ## Future
@@ -97,7 +83,7 @@ When Dragons ruled the skys.
 ```
 ````
 
-The shared `chronicle` identifier links the blocks; `starting` and `age-2` identify their individual parts. Keep each part identifier unique. Use another Chronicle identifier for an independent Chronicle. Linking works within one note, not across notes.
+The shared `my-chronicle` identifier links the blocks; `age-1` and `age-2` identify their individual parts. Keep each part identifier unique. Use another Chronicle identifier for an independent Chronicle. Linking works within one note, not across notes.
 
 New Chronicles and Ages created through Aion use one linked block per Age. Blocks render in place, so surrounding note text stays where you put it. Age order follows the note, with the Starting Age exception described below. Older independent blocks remain supported; adding an Age to one creates linked Age blocks.
 
@@ -130,13 +116,13 @@ Form edits and drag/drop save back to the Markdown note. Aion checks that the co
 
 Insertion lines preview where content will land. Clear search before dragging.
 
-|                Drag source                 |                    What moves                    |
-| :----------------------------------------: | :----------------------------------------------: |
-|                 Event text                 |                    That Event                    |
-|                Date heading                |           The Date and all its Events            |
-|                 Year label                 |      The Year and all its Dates and Events       |
-|                 Age title                  | The Age heading, description and colour boundary |
-| Age title with **Ctrl held when dropping** |         The entire Age and its contents          |
+| Drag source | What moves |
+| --- | --- |
+| Event text | That Event |
+| Date heading | The Date and all its Events |
+| Year label | The Year and all its Dates and Events |
+| Age title | The Age heading, description and colour boundary |
+| Age title with **Ctrl held when dropping** | The entire Age and its contents |
 
 An ordinary Age drag redefines where that Age starts. It can be placed between Dates; the Events left behind belong to the Age heading now directly above them. Splitting a Year repeats its label under the new Age. A move that would leave content without an Age is refused.
 
@@ -150,7 +136,7 @@ Select **Starting Age** in the Age dialog to move that Age and its contents to t
 
 Moving an Age into first position through drag/drop automatically makes it the Starting Age. Unchecking the option clears the designation without moving it. Deleting a designated Starting Age transfers the designation to the next Age, if one remains.
 
-Its linked marker uses the reserved part name `starting`, for example `<!-- aion: chronicle/starting -->`. Free-text Year/Time Labels remain available for beginnings outside a numbered calendar.
+Its linked marker uses the reserved part name `starting`, for example `<!-- aion: my-chronicle/starting -->`. Free-text Year/Time Labels remain available for beginnings outside a numbered calendar.
 
 ## Search
 
@@ -198,16 +184,16 @@ The Starting Age has neither sorting control. Adding, editing and reopening a Ch
 
 The **General** tab provides:
 
-|         Setting         |          Default          |     Range     |
-| :---------------------: | :-----------------------: | :-----------: |
-|      Age Text Size      |           140%            |   100–150%    |
-|     Year Text Size      |           100%            |    90–110%    |
-|     Date Text Size      |           120%            |   100–120%    |
-|     Event Text Size     |            80%            |    75–95%     |
-|    Year Column Width    |           150px           |   100–250px   |
-|   Space between Years   |           10px            |    5–25px     |
+| Setting | Default | Range |
+| --- | --- | --- |
+| Age Text Size | 140% | 100–150% |
+| Year Text Size | 100% | 90–110% |
+| Date Text Size | 120% | 100–120% |
+| Event Text Size | 80% | 75–95% |
+| Year Column Width | 150px | 100–250px |
+| Space between Years | 10px | 5–25px |
 | Default Timeline Colour | RGB 175, 0, 0 (`#af0000`) | Colour picker |
-|   Shaded Event panels   |          Enabled          |    On/off     |
+| Shaded Event panels | Enabled | On/off |
 
 Text-size controls use **5% steps** relative to document text size. Age Descriptions remain at 100%. Text-size changes update visible Chronicles immediately; reopen the note for other appearance changes.
 
@@ -219,9 +205,9 @@ Settings are stored per vault in the plugin's `data.json`; Chronicle content and
 
 ## Customising the example Chronicle
 
-**Insert example Chronicle** reads `Template.md` from the installed Aion Codex folder each time it runs. Edit that file to change your starting template; no rebuild or restart is needed.
+**Insert example Chronicle** uses a template bundled into `main.js`. Developers can edit `source/Template.md` and rebuild to change it. An optional `Template.md` in the installed plugin folder overrides the bundled template.
 
-Insertion assigns fresh Chronicle identifiers to avoid linking to an existing Chronicle accidentally. It preserves the template's content and does not modify Chronicles already inserted. Missing or invalid templates insert nothing and show an error.
+Insertion assigns fresh Chronicle identifiers to avoid linking to an existing Chronicle accidentally. It preserves the template's content and does not modify Chronicles already inserted. An invalid override template shows an error and inserts nothing.
 
 ## Performance and current scope
 
@@ -237,14 +223,16 @@ Aion currently focuses on authoring and displaying Chronicles. It does not provi
 
 The installable `main.js` is bundled from the local source files. It has no external runtime dependencies beyond Obsidian.
 
-From the plugin directory, rebuild with `node build.js`. The build also mirrors `Template.md` to `Example.md`; edit the template rather than the generated example.
+From the plugin directory, rebuild with `node source/build.js`. The build also mirrors `Template.md` to `Example.md`; edit the template rather than the generated example.
 
 Run the automated checks with:
 
 ```sh
-node --test *.test.js
+node --test source/*.test.js
 ```
 
 Checks cover parsing, saving, dialogs, linked blocks, search, sorting, rendering and drag/drop logic. Simulated checks do not replace testing inside Obsidian with real themes and pointer input.
 
-See [CHANGELOG.md](CHANGELOG.md) for the retained release history.
+See [CHANGELOG.md](source/CHANGELOG.md) for the retained release history.
+
+Development source, build script and automated tests are kept in `source/`. The build writes the installable `main.js` to the plugin root.
